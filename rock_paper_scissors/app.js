@@ -1,5 +1,7 @@
 // collects document elements for use in javascript
 const wins = document.getElementById('wins')
+const reset = document.getElementById('reset')
+const compwins = document.getElementById('compwins')
 const computerChoiceDisplay = document.getElementById('computer-choice')
 const userChoiceDisplay = document.getElementById('user-choice')
 const results = document.getElementById('results')
@@ -7,8 +9,12 @@ const possibleChoices = document.querySelectorAll('button')
 let userChoice
 let computerChoice
 let result
-let userwin
-let compwin
+let win = 0;
+let compwin = 0;
+
+reset.addEventListener('click', function(){
+    window.location.reload()
+})
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
    userChoice = e.target.id
@@ -39,16 +45,23 @@ const genearateComputerChoice = () => {
 const getResults = () => {
     if (computerChoice === userChoice){
         result = 'its a draw!'
-        userwin = +1
-        compwin = +1
+        win ++
+        compwin ++
     }
-    if (computerChoice === 'rock' && userChoice === 'paper' || computerChoice === 'paper' && userChoice === 'Scissors' 
+    else if (computerChoice === 'rock' && userChoice === 'paper' || computerChoice === 'paper' && userChoice === 'Scissors' 
     || computerChoice === 'scissors' && userChoice === 'rock'){
         result = 'you win'
+        win ++
+        
     }
     else{
-        result = 'you lose'    
+        result = 'you lose'
+        compwin ++   
     }
+    wins.innerHTML = win
+    compwins.innerHTML = compwin
     results.innerHTML = result
-    console.log(result)
+    // console.log(result)
+    // console.log(win  + ' user wins')
+    // console.log(compwin + ' computer wins')
 }
