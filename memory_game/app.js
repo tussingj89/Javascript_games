@@ -76,12 +76,12 @@ function checkMatch(){
     if (optionOne == optionTwo){
         alert('Match found!')
     }
-    if (cardChoice[0] == cardChoice[1]){
+    else if (cardChoice[0] == cardChoice[1]){
         alert('you found a match')
-        cards[optionOne.setAttribute('src', 'images/x.png')]
-        cards[optionTwo.setAttribute('src', 'images/x.png')]
-        cards[optionOne.removeEventListener('click', cardFlip)]
-        cards[optionTwo.removeEventListener('click', cardFlip)]
+        cards[optionOne].setAttribute('src', 'images/x.png')
+        cards[optionTwo].setAttribute('src', 'images/x.png')
+        cards[optionOne].removeEventListener('click', cardFlip)
+        cards[optionTwo].removeEventListener('click', cardFlip)
         cardswon.push(cardChoice)
     }
     else{
@@ -108,3 +108,5 @@ function cardFlip() {
     }
 }
 createBoard()
+console.log(cardChoice)
+console.log(cardswon)
