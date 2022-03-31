@@ -5,7 +5,7 @@ const time = document.querySelector('#time-left')
 
 let result = 0
 let hitPosition
-let currentTime = 60
+let currentTime = 10
 let timerId = null
 
 function randomMole() {
@@ -15,6 +15,7 @@ function randomMole() {
    
     let randomPosition = squares[Math.floor(Math.random() * 9)]
     randomPosition.classList.add('mole')
+    // console.log(randomPosition.id)
     
     hitPosition = randomPosition.id
 }
@@ -44,3 +45,5 @@ function CountDown(){
     }
 }
 let countDownTimerId = setInterval(CountDown, 1000)
+score.innerHTML = result
+console.log(result)
