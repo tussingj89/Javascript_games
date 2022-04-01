@@ -5,7 +5,7 @@ const time = document.querySelector('#time-left')
 
 let result = 0
 let hitPosition
-let currentTime = 10
+let currentTime = 60
 let timerId = null
 
 function randomMole() {
@@ -25,6 +25,7 @@ squares.forEach(square => {
             result++ 
             score.textcontent = result
             hitPosition = null
+            score.innerHTML = result
         }
     })
 })
@@ -36,7 +37,8 @@ move()
 
 function CountDown(){
     currentTime--
-    time.textcontent = currentTime
+    time.innerHTML = currentTime
+    // console.log(time)
 
     if (currentTime == 0){
         clearInterval(countDownTimerId)
@@ -45,5 +47,5 @@ function CountDown(){
     }
 }
 let countDownTimerId = setInterval(CountDown, 1000)
-score.innerHTML = result
-console.log(result)
+// score.innerHTML = result
+// console.log(result)
