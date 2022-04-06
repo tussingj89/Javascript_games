@@ -8,6 +8,7 @@ const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p
 const drawings = []
 let guesses = 10;
 let hiddenChoice = []
+let right
 
 function randomword(){
     let choice = words[Math.floor(Math.random() * words.length)]
@@ -15,7 +16,7 @@ function randomword(){
         const square = document.createElement('square')
         square.setAttribute('data-id', i)
         hidden.appendChild(square)
-
+        console.log(choice)
         hiddenChoice = choice
     }
 }
@@ -27,6 +28,7 @@ function generateLetters(){
     letters.addEventListener('click', checkMatch)
     button.appendChild(letters)
     letters.innerHTML = letters.id
+    
 
 
 
@@ -34,23 +36,38 @@ function generateLetters(){
 }
 function checkMatch(){
     console.log(this.id)
-    console.log(hiddenChoice)
+    // console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
         if (this.id === hiddenChoice[k]){
-
             console.log('you found a letter')
+            console.log(guesses)
+            // set button collor to green
+            right++
+            break;
         }
         else {
-            // guesses --
+            // set button color to red
+            guesses--
             console.log('guess again')
+            console.log(guesses)
+            break;
+            
         }
+    }
+    if(right === hiddenChoice.length){
+        alert('congradulations you won')
+    }
+    else if(guesses === 0){
+        alert('sorry you lost')
     }
     // const card = document.querySelectorAll('hidden square')
 
 }
+
 function play(){
     randomword()
     generateLetters()
-    remaining.innerHTML = guesses
+    
 }
 play()
+remaining.innerHTML = guesses
