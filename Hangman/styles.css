@@ -1,23 +1,27 @@
-body {
-
-}
-#wrapper {
-    
-}
-#hidden #button {
-    width: 800px;
+#hidden{
+    width: 600px;
     height: 50px;
 }
+#button{
+    width: 400px;
+}
 square {
-    height: 150px;
-    width: 150px;
-    border: solid black 1px;
-    margin: 5px;
+    float:left;
+    margin: 0 10px 10px 0;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    cursor:pointer;
+    border: solid 1px black;
 }
 .letters {
-    height: 150px;
-    width: 150px;
-    border: solid black 1px;
-    margin: 5px;
-    background-color: aqua;
+    flex-wrap: wrap;
+    text-align: center;
+    float:left;
+    margin: 0 10px 10px 0;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    cursor:pointer;
+    border: solid 1px black;
 }
