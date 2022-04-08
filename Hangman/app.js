@@ -9,6 +9,11 @@ const drawings = []
 let guesses = 10;
 let hiddenChoice = []
 let right
+let greenColor = []
+let redColor = []
+
+function green(){ document.getElementById(greenColor).style.backgroundColor = 'green'; }
+function red(){ document.getElementById(redColor).style.backgroundColor = 'red'; }
 
 function randomword(){
     let choice = words[Math.floor(Math.random() * words.length)]
@@ -35,21 +40,20 @@ function generateLetters(){
     }
 }
 function checkMatch(){
-    console.log(this.id)
-    // console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
         if (this.id === hiddenChoice[k]){
             console.log('you found a letter')
-            console.log(guesses)
-            // set button collor to green
+            greenColor = this.id
+            green(greenColor)
             right++
-            break;
+            break; 
         }
         else {
-            // set button color to red
-            guesses--
             console.log('guess again')
             console.log(guesses)
+            redColor = this.id
+            red(redColor)
+            guesses--
             break;
             
         }
@@ -60,7 +64,7 @@ function checkMatch(){
     else if(guesses === 0){
         alert('sorry you lost')
     }
-    // const card = document.querySelectorAll('hidden square')
+    remaining.innerHTML = guesses
 
 }
 
