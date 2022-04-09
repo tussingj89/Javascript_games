@@ -19,7 +19,7 @@ function randomword(){
     let choice = words[Math.floor(Math.random() * words.length)]
     for (let i = 0; i < choice.length; i++){
         const square = document.createElement('square')
-        square.setAttribute('data-id', i)
+        square.setAttribute('id', i)
         hidden.appendChild(square)
         console.log(choice)
         hiddenChoice = choice.split('')
@@ -38,30 +38,26 @@ function generateLetters(){
 function checkMatch(){
     console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
-        if(right === hiddenChoice.length){
-            alert('congradulations you won')
-        }
         if (this.id === hiddenChoice[k]){
             console.log('you found a letter')
-            console.log(this.id)
             greenColor = this.id
+            document.getElementById(k).innerHTML = this.id
             green(greenColor)
             right++
-            console.log(right)
             return
         }
-        else if (this.id != hiddenChoice[k]) {
-            console.log('guess again')
-            console.log(guesses)
-            console.log(this.id)
-            redColor = this.id
-            red(redColor)
-            guesses--
+    }
+    console.log('guess again')
+    redColor = this.id
+    red(redColor)
+    guesses--
+        if(right === hiddenChoice.length){
+        alert('congradulations you won')
         }
         else if(guesses === 0){
-        alert('sorry you lost')
-    }
-    }
+        alert('sorry you lost the correct word was' + choice)
+        }
+
     
     remaining.innerHTML = guesses
 
