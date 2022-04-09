@@ -36,6 +36,7 @@ function generateLetters(){
     }
 }
 function checkMatch(){
+    let correct
     console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
         if (this.id === hiddenChoice[k]){
@@ -44,19 +45,20 @@ function checkMatch(){
             document.getElementById(k).innerHTML = this.id
             green(greenColor)
             right++
-            return
+            correct = true
         }
     }
     console.log('guess again')
     redColor = this.id
-    red(redColor)
+    if (correct != true){
+    red(redColor)}
     guesses--
         if(right === hiddenChoice.length){
         alert('congradulations you won')
         }
         else if(guesses === 0){
         alert('sorry you lost the correct word was' + choice)
-        }
+    }
 
     
     remaining.innerHTML = guesses
