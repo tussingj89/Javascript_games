@@ -1,3 +1,7 @@
+#wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
 #hidden{
     width: 600px;
     height: 50px;
@@ -6,6 +10,7 @@
     width: 400px;
 }
 square {
+    text-align: center;
     float:left;
     margin: 0 10px 10px 0;
     width:35px;
