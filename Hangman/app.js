@@ -8,7 +8,7 @@ const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p
 const drawings = []
 let guesses = 10;
 let hiddenChoice = []
-let right
+let right = 0
 let greenColor = []
 let redColor = []
 
@@ -22,7 +22,7 @@ function randomword(){
         square.setAttribute('data-id', i)
         hidden.appendChild(square)
         console.log(choice)
-        hiddenChoice = choice
+        hiddenChoice = choice.split('')
     }
 }
 function generateLetters(){
@@ -33,37 +33,36 @@ function generateLetters(){
     letters.addEventListener('click', checkMatch)
     button.appendChild(letters)
     letters.innerHTML = letters.id
-    
-
-
-
     }
 }
 function checkMatch(){
+    console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
+        if(right === hiddenChoice.length){
+            alert('congradulations you won')
+        }
         if (this.id === hiddenChoice[k]){
             console.log('you found a letter')
+            console.log(this.id)
             greenColor = this.id
             green(greenColor)
             right++
-            break; 
+            console.log(right)
+            return
         }
-        else {
+        else if (this.id != hiddenChoice[k]) {
             console.log('guess again')
             console.log(guesses)
+            console.log(this.id)
             redColor = this.id
             red(redColor)
             guesses--
-            break;
-            
         }
-    }
-    if(right === hiddenChoice.length){
-        alert('congradulations you won')
-    }
-    else if(guesses === 0){
+        else if(guesses === 0){
         alert('sorry you lost')
     }
+    }
+    
     remaining.innerHTML = guesses
 
 }
@@ -75,3 +74,4 @@ function play(){
 }
 play()
 remaining.innerHTML = guesses
+
