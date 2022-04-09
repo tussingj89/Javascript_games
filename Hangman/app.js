@@ -21,7 +21,6 @@ function randomword(){
         const square = document.createElement('square')
         square.setAttribute('id', i)
         hidden.appendChild(square)
-        console.log(choice)
         hiddenChoice = choice.split('')
     }
 }
@@ -37,7 +36,6 @@ function generateLetters(){
 }
 function checkMatch(){
     let correct
-    console.log(hiddenChoice)
     for (let k = 0; k < hiddenChoice.length; k++){
         if (this.id === hiddenChoice[k]){
             console.log('you found a letter')
@@ -53,6 +51,7 @@ function checkMatch(){
     if (correct != true){
     red(redColor)}
     guesses--
+
         if(right === hiddenChoice.length){
         alert('congradulations you won')
         }
