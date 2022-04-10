@@ -2,6 +2,7 @@ const hangman = document.querySelector('.hang-img')
 const hidden = document.getElementById('hidden')
 const button = document.getElementById('button')
 const remaining = document.getElementById('guess-remain')
+const reload = document.getElementById('reload')
 
 const words = ["apple","chair","python","ruby","javascript","variable","object","zepplin","ankh","sphynx","batman","comics","clover","dog","cat"]
 const alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
@@ -12,6 +13,7 @@ let right = 0
 let greenColor = []
 let redColor = []
 
+reload.addEventListener('click', function(){ window.location.reload() })
 function green(){ document.getElementById(greenColor).style.backgroundColor = 'green'; }
 function red(){ document.getElementById(redColor).style.backgroundColor = 'red'; }
 
@@ -49,26 +51,21 @@ function checkMatch(){
     console.log('guess again')
     redColor = this.id
     if (correct != true){
-    red(redColor)}
-    guesses--
+    red(redColor)
+    guesses-- }
 
         if(right === hiddenChoice.length){
         alert('congradulations you won')
         }
-        else if(guesses === 0){
-        alert('sorry you lost the correct word was' + choice)
+        if(guesses === 0){
+        alert('sorry you lost the correct word was:  ' + hiddenChoice)
     }
-
-    
     remaining.innerHTML = guesses
-
 }
 
 function play(){
     randomword()
     generateLetters()
-    
+    remaining.innerHTML = guesses
 }
 play()
-remaining.innerHTML = guesses
-
