@@ -4,3 +4,19 @@
     border: solid black 1px;
 
 }
+.hearts{
+    background-image: url("./images/heart.png");
+    background-size: 50px;
+}
+.diamonds{
+    background-image: url("./images/diamond.png");
+    background-size: 50px;
+}
+.clubs{
+    background-image: url("./images/clubs.png");
+    background-size: 50px;
+}
+.spade{
+    background-image: url("./images/spade.png");
+    background-size: 50px;
+}
