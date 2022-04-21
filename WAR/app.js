@@ -33,13 +33,10 @@ class Deck {
 //   console.log(deck1.deck);
 
 deal.addEventListener('click', function(){
-    let tempCard1 = playerArray[0];
-    let tempCard2 = compArray[0];
-    tempCard1.split(',');
-    tempCard2.split(',');
-     console.log(tempCard1 + ' p1  ' + playerIndex);
-     console.log(tempCard2 + '  c1  ' + compIndex);
-    //  split string at ,
+    let tempCard1 = playerArray[0].split(',');
+    let tempCard2 = compArray[0].split(',');
+     console.log(tempCard1);
+     console.log(tempCard2);
     //  display them inside cards
     // set background image to suit
     // trigger check function
