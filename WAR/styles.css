@@ -1,22 +1,60 @@
-.square{
+#player{
     height: 200px;
     width: 150px;
     border: solid black 1px;
 
 }
-.hearts{
+#computer{
+    height: 200px;
+    width: 150px;
+    border: solid black 1px;
+
+}
+.Hearts{
     background-image: url("./images/heart.png");
-    background-size: 50px;
+    background-size: 100%;
+    object-fit: cover;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    padding-top:75px;
 }
-.diamonds{
+.Diamonds{
     background-image: url("./images/diamond.png");
-    background-size: 50px;
+    background-size: 100%;
+    object-fit: cover;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    padding-top:75px;
 }
-.clubs{
+.Clubs{
     background-image: url("./images/clubs.png");
-    background-size: 50px;
+    background-size: 100%;
+    object-fit: cover;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    padding-top:75px;
 }
-.spade{
+.Spades{
     background-image: url("./images/spade.png");
-    background-size: 50px;
+    background-size: 100%;
+    object-fit: cover;
+    color: white;
+    font-size: 40px;
+    text-shadow: 2px 2px black;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0 10px 10px 0;
+    padding-top:75px;
 }
