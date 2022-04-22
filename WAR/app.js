@@ -37,8 +37,11 @@ deal.addEventListener('click', function(){
     let tempCard2 = compArray[0].split(',');
      console.log(tempCard1);
      console.log(tempCard2);
+     player.setAttribute('class', tempCard1[2])
+     computer.setAttribute('class', tempCard2[2])
+     player.innerHTML = tempCard1[0]
+     computer.innerHTML = tempCard2[0]
     //  display them inside cards
-    // set background image to suit
     // trigger check function
 
 })
