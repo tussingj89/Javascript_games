@@ -49,7 +49,7 @@ class Deck {
 function check(tempCard1, tempCard2){
     console.log(tempCard1, tempCard2)
 
-    if(tempCard1[1] > tempCard2[1]){
+    if(parseInt(tempCard1[1]) > parseInt(tempCard2[1])){
         console.log('you win')
         results.innerHTML = 'You Win!'
         pPoints++
@@ -62,7 +62,7 @@ function check(tempCard1, tempCard2){
   
 
     }
-    else if(tempCard1[1] === tempCard2[1]){
+    else if(parseInt(tempCard1[1]) === parseInt(tempCard2[1])){
         console.log('tie')
         results.innerHTML = 'Its a Tie'
         playerArray.shift(1)
